@@ -3,14 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Firebase App</title>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional CSS -->
+    <title>Menu - Ryuu's Coffee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* Light beige background */
+            color: #3e2723; /* Dark brown text */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #795548; /* Coffee brown */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Cursive', cursive;
+            margin: 0;
+        }
+        nav {
+            background-color: #a1887f; /* Lighter brown */
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .product-card {
+            border: 1px solid #795548;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #795548;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Firestore Data</h1>
-    <div id="data-container"></div>
-    <script src="script.js"></script>
+
+<header>
+    <h1>Ryuu's Coffee</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Our Products</h2>
+    <div class="products-container">
+        <!-- Product Cards will be injected here -->
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1736483479794?alt=media&token=9063eab3-7695-45b1-a5d6-411dc6fb212a" alt="Long Black" style="width:100%; border-radius: 8px;">
+            <h3>Long Black</h3>
+            <p>Category: Drinks</p>
+            <p>Price: $1.20</p>
+            <p>Description: Hot water with 14 grams of espresso on top.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1736427961351?alt=media&token=3b5cb776-1ef8-40fc-aa3a-b423d86a49b1" alt="Lazy Sunday" style="width:100%; border-radius: 8px;">
+            <h3>Lazy Sunday</h3>
+            <p>Category: Beans</p>
+            <p>Price: $20.00</p>
+            <p>Description: Milk Chocolate, Caramel.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1722582750170?alt=media&token=ab7b926c-d3bd-4072-aff7-a4c3935b0b7c" alt="Americano" style="width:100%; border-radius: 8px;">
+            <h3>Americano</h3>
+            <p>Category: Drinks</p>
+            <p>Price: $1.20</p>
+            <p>Description: Double shot espresso (14g) diluted with 300ml of hot water.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1736483277454?alt=media&token=7840bb9d-3099-4e76-a297-37d18a9951cb" alt="Cappuccino" style="width:100%; border-radius: 8px;">
+            <h3>Cappuccino</h3>
+            <p>Category: Drinks</p>
+            <p>Price: $2.00</p>
+            <p>Description: An espresso-based coffee drink traditionally prepared with steamed milk including a layer of milk foam.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1739343688718?alt=media&token=03c4dd88-8f2f-4cff-9f5d-c3499648f3be" alt="Iced Latte" style="width:100%; border-radius: 8px;">
+            <h3>Iced Latte</h3>
+            <p>Category: Drinks</p>
+            <p>Price: $2.20</p>
+            <p>Description: Ice, frothed milk, and espresso on top flowing downwards.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2f1722582780953?alt=media&token=985f304d-d81d-4cc3-b486-e9d50300de93" alt="Espresso" style="width:100%; border-radius: 8px;">
+            <h3>Espresso</h3>
+            <p>Category: Drinks</p>
+            <p>Price: $1.00</p>
+            <p>Description: Double shot espresso (14g), rich flavor, full body carefully extracted.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1736483573485?alt=media&token=37ed4551-c905-4f18-bbe1-d180c9976f6b" alt="Caramel Macchiato" style="width:100%; border-radius: 8px;">
+            <h3>Caramel Macchiato</h3>
+            <p>Category: Drinks</p>
+            <p>Price: $2.50</p>
+            <p>Description: Macchiato with drizzle of caramel on top.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1736427969263?alt=media&token=74a262a2-2f66-4787-a389-9d5945a6693f" alt="Brazil Sul de Minas" style="width:100%; border-radius: 8px;">
+            <h3>Brazil Sul de Minas</h3>
+            <p>Category: Beans</p>
+            <p>Price: $18.00</p>
+            <p>Description: Honey, nutty, chocolate apricot.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bread-a5570.appspot.com/o/products%2F1738313918479?alt=media&token=bdf1d976-02f8-4a2b-844a-3031a6d8d539" alt="Egg Mayo Toast Sandwich" style="width:100%; border-radius: 8px;">
+            <h3>Egg Mayo Toast Sandwich</h3>
+            <p>Category: Foods</p>
+            <p>Price: $3.00</p>
+            <p>Description: Eggy Mayonnaisy in the oven for 2 minutes.</p>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Ryuu's Coffee</p>
+</footer>
+
 </body>
 </html>
